@@ -13,11 +13,15 @@ export default class extends Controller {
       1000);
 
     this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setSize(window.innerWidth / window.innerHeight);
+    this.renderer.setSize(window.innerWidth, window.innerHeight);  
     document.body.appendChild(this.renderer.domElement);
 
+    const red = 0xff0000;
+    const green = 0x00ff00;
+    const blue = 0x0000ff;
+
     this.geometry = new THREE.BoxGeometry();
-    this.material = new THREE.MeshBasicMaterial({ color: 0x000000 });
+    this.material = new THREE.MeshBasicMaterial({ color: blue }); 
 
     this.originCube = this.createCube(0, 0, 0);
 
@@ -47,4 +51,3 @@ export default class extends Controller {
   }
 
 }
-
